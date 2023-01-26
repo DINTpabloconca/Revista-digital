@@ -1,0 +1,39 @@
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
+using Revista_digital.Modelo;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Revista_digital.Vista_Modelo
+{
+    class VistaCreacionArticuloVM : ObservableObject
+    {
+        public RelayCommand AñadirArticuloCommand { get; }
+
+        private Articulo articuloCreado;
+
+        public Articulo ArticuloCreado
+        {
+            get { return articuloCreado; }
+            set { SetProperty(ref articuloCreado, value); }
+        }
+
+
+        public VistaCreacionArticuloVM()
+        {
+            ArticuloCreado = new Articulo();
+            AñadirArticuloCommand = new RelayCommand(AñadirArticulo);
+        }
+
+        public void AñadirArticulo()
+        {
+            //Aquí añadir el artículo a la base de datos
+
+            //Aquí se vuelve a dejar vacío el artículo
+            ArticuloCreado = new Articulo();
+        }
+    }
+}

@@ -111,6 +111,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Vista Modelo\VistaCreacionArticuloVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -125,6 +126,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelo\Articulo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -156,16 +158,10 @@
     <Resource Include="Vistas\TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Vista Modelo\TextFile1.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Servicios\TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\TextFile1.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Modelo\TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Mensajes\TextFile1.txt" />
