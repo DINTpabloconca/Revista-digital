@@ -111,6 +111,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Convertidores\RedsocialConverter.cs" />
+    <Compile Include="Servicios\DialogoService.cs" />
+    <Compile Include="Servicios\GestionarAutorService.cs" />
+    <Compile Include="Vista Modelo\AutorVM.cs" />
+    <Compile Include="Vistas\VistaAutor.xaml.cs">
+      <DependentUpon>VistaAutor.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -123,8 +130,13 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Vistas\VistaAutor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelo\Autor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -151,7 +163,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Recursos\facebook_logo.png" />
+    <Resource Include="Recursos\instagram_logo.png" />
+    <Resource Include="Recursos\twitter_logo.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Vistas\TextFile1.txt" />
   </ItemGroup>
@@ -160,9 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Servicios\TextFile1.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Recursos\TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Modelo\TextFile1.txt" />
