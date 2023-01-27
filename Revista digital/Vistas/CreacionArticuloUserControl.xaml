@@ -6,27 +6,54 @@
              xmlns:local="clr-namespace:Revista_digital.Vistas"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Background="White" Orientation="Vertical">
-        <TextBlock Text="Crear Articulo" FontSize="30" HorizontalAlignment="Center" Margin="10"></TextBlock>
-        <StackPanel Orientation="Horizontal" Margin="10">
-            <Label Content="Título: "></Label>
-            <TextBox Width="700" Text="{Binding Path=ArticuloCreado.Titulo}" Margin="15,0,0,0"></TextBox>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="10">
-            <Label Content="Cuerpo: "></Label>
-            <TextBox Width="700" Height="200" Text="{Binding Path=ArticuloCreado.Cuerpo}" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="5"></TextBox>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="10">
-            <Label Content="Imagen: "></Label>
-            <TextBox Width="650" Margin="5,0,0,0" Text="{Binding Path=ArticuloCreado.Imagen}"></TextBox>
-            <Button Margin="5,0,0,0" Content="Examinar"></Button>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="10">
-            <Label Content="Autor: "></Label>
-            <ComboBox Margin="15,0,0,0"></ComboBox>
-        </StackPanel>
-        
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Label}" x:Key="LabelCenter">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}" x:Key="TextboxCenter">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Margin" Value="20"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Crear Articulo" FontSize="30" HorizontalAlignment="Center" Margin="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"></TextBlock>
+        <Label Grid.Row="1" Grid.Column="0" Content="Título: " Style="{StaticResource LabelCenter}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=ArticuloCreado.Titulo}" Style="{StaticResource TextboxCenter}"></TextBox>
+        <Label Grid.Row="2" Grid.Column="0" Content="Sección: " Style="{StaticResource LabelCenter}"></Label>
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextboxCenter}"></TextBox>
+        <Label Grid.Row="3" Grid.Column="0" Content="Cuerpo: " Style="{StaticResource LabelCenter}"></Label>
+        <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Text="{Binding Path=ArticuloCreado.Cuerpo}" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="15"></TextBox>
+        <Label Grid.Row="5" Grid.Column="0" Content="Imagen: " Style="{StaticResource LabelCenter}"></Label>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=ArticuloCreado.Imagen}" Style="{StaticResource TextboxCenter}"></TextBox>
+        <Button Grid.Column="2" Grid.Row="5" Margin="10" Width="100" Height="20" Content="Examinar" Command="{Binding Path=ExaminarImagenCommand}"></Button>
 
-        <Label></Label>
-    </StackPanel>
+
+        <Label Content="Autor: " Grid.Row="6" Grid.Column="0" Style="{StaticResource LabelCenter}"></Label>
+        <!-- Para seleccionar el autor utilizar el Syncfusion-->
+        <TextBox Style="{StaticResource TextboxCenter}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"></TextBox>
+            
+            <StackPanel Grid.Row="7" Grid.Column="2" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Content="Borrar"  Width="100" Height="20" Margin="5"  Command="{Binding Path=VaciarArticuloCommand}"></Button>
+                <Button Content="Aceptar" Width="100" Height="20" Margin="5" Command="{Binding Path=AñadirArticuloCommand}"></Button>
+            </StackPanel>
+        <Button Grid.Row="7" Grid.Column="0" Content="Cancelar" Width="100" Height="20" Margin="5"></Button>
+
+    </Grid>
 </UserControl>
