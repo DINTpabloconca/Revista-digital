@@ -163,12 +163,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="Vistas\TextFile1.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Servicios\TextFile1.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Recursos\TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
