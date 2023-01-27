@@ -179,7 +179,7 @@
     <Resource Include="Recursos\facebook_logo.png" />
     <Resource Include="Recursos\instagram_logo.png" />
     <Resource Include="Recursos\twitter_logo.png" />
-  <ItemGroup />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\TextFile1.txt" />
   </ItemGroup>
