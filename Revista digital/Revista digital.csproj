@@ -112,6 +112,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Servicios\ServicioCreacionArticulo.cs" />
+    <Compile Include="Servicios\ServicioNavegacion.cs" />
+    <Compile Include="Vista Modelo\MainWindowVM.cs" />
     <Compile Include="Vista Modelo\VistaCreacionArticuloVM.cs" />
     <Compile Include="Vistas\CreacionArticuloUserControl.xaml.cs">
       <DependentUpon>CreacionArticuloUserControl.xaml</DependentUpon>
