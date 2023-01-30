@@ -9,6 +9,15 @@ namespace Revista_digital.Modelo
 {
     class Articulo : ObservableObject
     {
+        private string url;
+
+        public string URL
+        {
+            get { return url; }
+            set { SetProperty(ref url, value); }
+        }
+
+
         private string autor;
 
         public string Autor
@@ -67,12 +76,13 @@ namespace Revista_digital.Modelo
             Seccion = seccion;
             //Nickname = Autor.Nickname (Cuando la clase autor esté creada)
             Nickname = autor.Nickname;
+            URL = String.Empty;
         }
 
 
         public Articulo()
         {
-
+            URL = String.Empty;
         }
 
     }

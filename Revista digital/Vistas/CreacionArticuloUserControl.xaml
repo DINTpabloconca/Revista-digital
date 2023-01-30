@@ -37,9 +37,9 @@
         <Label Grid.Row="1" Grid.Column="0" Content="Título: " Style="{StaticResource LabelCenter}"/>
         <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=ArticuloCreado.Titulo}" Style="{StaticResource TextboxCenter}"></TextBox>
         <Label Grid.Row="2" Grid.Column="0" Content="Sección: " Style="{StaticResource LabelCenter}"></Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextboxCenter}"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextboxCenter}" Text="{Binding Path=ArticuloCreado.Seccion}"></TextBox>
         <Label Grid.Row="3" Grid.Column="0" Content="Cuerpo: " Style="{StaticResource LabelCenter}"></Label>
-        <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Text="{Binding Path=ArticuloCreado.Cuerpo}" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="15"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Text="{Binding Path=ArticuloCreado.Cuerpo}" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="15" AcceptsReturn="True" Height="80"></TextBox>
         <Label Grid.Row="5" Grid.Column="0" Content="Imagen: " Style="{StaticResource LabelCenter}"></Label>
         <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=ArticuloCreado.Imagen}" Style="{StaticResource TextboxCenter}"></TextBox>
         <Button Grid.Column="2" Grid.Row="5" Margin="10" Width="100" Height="20" Content="Examinar" Command="{Binding Path=ExaminarImagenCommand}"></Button>
@@ -47,13 +47,13 @@
 
         <Label Content="Autor: " Grid.Row="6" Grid.Column="0" Style="{StaticResource LabelCenter}"></Label>
         <!-- Para seleccionar el autor utilizar el Syncfusion-->
-        <TextBox Style="{StaticResource TextboxCenter}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"></TextBox>
+        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20" Width="100"  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=ListaAutores}" DisplayMemberPath="Nombre" SelectedItem="{Binding Path=ArticuloCreado.Autor}"></ComboBox>
             
             <StackPanel Grid.Row="7" Grid.Column="2" HorizontalAlignment="Right" Orientation="Horizontal">
                 <Button Content="Borrar"  Width="100" Height="20" Margin="5"  Command="{Binding Path=VaciarArticuloCommand}"></Button>
-                <Button Content="Aceptar" Width="100" Height="20" Margin="5" Command="{Binding Path=AñadirArticuloCommand}"></Button>
+                <Button Content="Publicar" Width="100" Height="20" Margin="5" Command="{Binding Path=AñadirArticuloCommand}"></Button>
             </StackPanel>
-        <Button Grid.Row="7" Grid.Column="0" Content="Cancelar" Width="100" Height="20" Margin="5"></Button>
+        <Button Grid.Row="7" Grid.Column="0" Content="Cancelar" Height="20" Margin="5"></Button>
 
     </Grid>
 </UserControl>
