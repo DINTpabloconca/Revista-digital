@@ -94,7 +94,7 @@ namespace Revista_digital.Vista_Modelo
         }
         private GestionarAutorService gestionarAutorService;
         private DialogoService dialogoService;
-
+        private ServicioCreacionArticulo servicioArticulo;
         public AutorVM()
         {
             Redes = new ObservableCollection<string>();
@@ -109,6 +109,7 @@ namespace Revista_digital.Vista_Modelo
 
             gestionarAutorService = new GestionarAutorService();
             dialogoService = new DialogoService();
+            servicioArticulo = new ServicioCreacionArticulo();
         }
 
         private void EliminarAutor()
@@ -131,8 +132,7 @@ namespace Revista_digital.Vista_Modelo
 
         public void SeleccionarImagenAutor()
         {
-            //Sera igual al resultado del servicio con la imagen seleccionada por el autor
-            //ImagenSeleccionadaPorUsuario = 
+            ImagenSeleccionadaPorUsuario = servicioArticulo.ExaminaImagen();
         }
         public void GuardarAutor()
         {
