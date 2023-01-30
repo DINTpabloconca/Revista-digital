@@ -18,6 +18,8 @@ namespace Revista_digital.Vista_Modelo
 
         public RelayCommand ExaminarImagenCommand { get; }
 
+        public RelayCommand VaciarArticuloCommand { get; }
+
         private Articulo articuloCreado;
 
         public Articulo ArticuloCreado
@@ -33,6 +35,7 @@ namespace Revista_digital.Vista_Modelo
             ArticuloCreado = new Articulo();
             AñadirArticuloCommand = new RelayCommand(AñadirArticulo);
             ExaminarImagenCommand = new RelayCommand(ExaminarImagen);
+            VaciarArticuloCommand = new RelayCommand(VaciarArticulo);
         }
 
         public void AñadirArticulo()
@@ -40,9 +43,13 @@ namespace Revista_digital.Vista_Modelo
             //Aquí añadir el artículo a la base de datos
 
             //Aquí se vuelve a dejar vacío el artículo
-            ArticuloCreado = new Articulo();
+            VaciarArticulo();
         }
 
+        public void VaciarArticulo()
+        {
+            ArticuloCreado = new Articulo();
+        }
         public void ExaminarImagen()
         {
             ArticuloCreado.Imagen = servicioArticulo.ExaminaImagen();

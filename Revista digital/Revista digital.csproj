@@ -118,6 +118,8 @@
     <Compile Include="Servicios\GestionarAutorService.cs" />
     <Compile Include="Servicios\ServicioCreacionArticulo.cs" />
     <Compile Include="Vista Modelo\AutorVM.cs" />
+    <Compile Include="Servicios\ServicioNavegacion.cs" />
+    <Compile Include="Vista Modelo\MainWindowVM.cs" />
     <Compile Include="Vista Modelo\VistaCreacionArticuloVM.cs" />
     <Compile Include="Vistas\CreacionArticuloUserControl.xaml.cs">
       <DependentUpon>CreacionArticuloUserControl.xaml</DependentUpon>
@@ -177,6 +179,9 @@
     <Resource Include="Recursos\facebook_logo.png" />
     <Resource Include="Recursos\instagram_logo.png" />
     <Resource Include="Recursos\twitter_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Mensajes\TextFile1.txt" />

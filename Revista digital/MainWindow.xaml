@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Revista_digital"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="600" Width="900">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding Path=AbrirCreacionArticuloCommand}">Crear artículo</Button>
+            <Button Command="{Binding Path=AbrirVistaAutorCommand}">Administrar autores</Button>
+        </StackPanel>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="5">
+            <ContentControl Content="{Binding Path=ContenidoVentana}"></ContentControl>
+        </Border>
+    </StackPanel>
 </Window>

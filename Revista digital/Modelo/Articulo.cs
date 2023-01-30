@@ -50,22 +50,25 @@ namespace Revista_digital.Modelo
             set { SetProperty(ref nickname, value); }
         }
 
-        public Articulo(string autor, string titulo, string cuerpo, string imagen, string nickname)
+        private string seccion;
+
+        public string Seccion
+        {
+            get { return seccion; }
+            set { SetProperty(ref seccion, value); }
+        }
+
+        public Articulo(string autor, string titulo, string cuerpo, string imagen, string seccion)
         {
             Autor = autor;
             Titulo = titulo;
             Cuerpo = cuerpo;
             Imagen = imagen;
-            Nickname = nickname;
+            Seccion = seccion;
+            //Nickname = Autor.Nickname (Cuando la clase autor esté creada)
+            Nickname = autor;
         }
 
-        public Articulo(string autor, string titulo, string cuerpo, string nickname)
-        {
-            Autor = autor;
-            Titulo = titulo;
-            Cuerpo = cuerpo;
-            Nickname = nickname;
-        }
 
         public Articulo()
         {
