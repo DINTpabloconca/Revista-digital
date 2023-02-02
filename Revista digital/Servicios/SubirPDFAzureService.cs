@@ -13,8 +13,10 @@ namespace Revista_digital.Servicios
     {
         public string SubirPDF(Articulo articulo)
         {
-            var clienteBlobService = new BlobServiceClient("CADENA DE CONEXION");
-            var clienteContenedor = clienteBlobService.GetBlobContainerClient("ArticulosPDF");
+            string cadenaConexion = Properties.Settings.Default.cadena_conexion_azureblob;
+
+            var clienteBlobService = new BlobServiceClient(cadenaConexion);
+            var clienteContenedor = clienteBlobService.GetBlobContainerClient("articulospdf");
             clienteContenedor.CreateIfNotExists();
 
             Stream streamPdf = File.OpenRead(articulo.Titulo + ".pdf");
