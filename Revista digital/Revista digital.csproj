@@ -194,9 +194,10 @@
     <Compile Include="Modelo\Articulo.cs" />
     <Compile Include="Modelo\Autor.cs" />
     <Compile Include="Servicios\DialogoService.cs" />
-    <Compile Include="Servicios\GestionPDFService.cs" />
+    <Compile Include="Servicios\GenerarPDFService.cs" />
     <Compile Include="Servicios\GestionarAutorService.cs" />
     <Compile Include="Servicios\ServicioCreacionArticulo.cs" />
+    <Compile Include="Servicios\SubirPDFAzureService.cs" />
     <Compile Include="Vista Modelo\AutorVM.cs" />
     <Compile Include="Servicios\ServicioNavegacion.cs" />
     <Compile Include="Vista Modelo\MainWindowVM.cs" />

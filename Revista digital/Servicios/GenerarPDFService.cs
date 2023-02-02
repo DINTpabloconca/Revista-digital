@@ -13,15 +13,12 @@ using System.Web.UI.WebControls;
 
 namespace Revista_digital.Servicios
 {
-    class GestionPDFService
+    class GenerarPDFService
     {
-        private Articulo articulo;
         public void GenerarPdf(Articulo articuloModel)
         {
-            articulo = articuloModel;
-
             WebClient mywebClient = new WebClient();
-            mywebClient.DownloadFile(articulo.Imagen, "downloadedImage.png");
+            mywebClient.DownloadFile(articuloModel.Imagen, "downloadedImage.png");
 
             byte[] imageData = File.ReadAllBytes("downloadedImage.png");
 
@@ -35,18 +32,18 @@ namespace Revista_digital.Servicios
                     page.DefaultTextStyle(x => x.FontSize(20));
 
                     page.Header()
-                        .Text(articulo.Titulo)
+                        .Text(articuloModel.Titulo)
                         .SemiBold().FontSize(36).FontColor(Colors.LightGreen.Medium);
 
                     page.Content()
                         .PaddingVertical(1, QuestPDF.Infrastructure.Unit.Centimetre)
                         .Column(x =>
                         {
-                            x.Item().Text(articulo.Seccion).FontSize(25).SemiBold();
+                            x.Item().Text(articuloModel.Seccion).FontSize(25).SemiBold();
                             x.Spacing(20);
                             x.Item().Image(imageData);
                             x.Spacing(5);
-                            x.Item().Text(articulo.Cuerpo);
+                            x.Item().Text(articuloModel.Cuerpo);
                             
                         });
 
@@ -55,20 +52,18 @@ namespace Revista_digital.Servicios
                         .Text(x =>
                         {
                             x.Span("Autor: ");
-                            x.Span(articulo.Autor);
+                            x.Span(articuloModel.Autor);
                         });
                     page.Footer()
                         .AlignRight()
                         .Column(x =>
                         {
-                            x.Item().Image(articulo.Autor/*.redSocial*/);
-                            x.Item().Text(articulo.Autor/*.NickName*/);
+                            x.Item().Image(articuloModel.Autor/*.redSocial*/);
+                            x.Item().Text(articuloModel.Autor/*.NickName*/);
                         });
                 });
             })
-            .GeneratePdf(articulo.Titulo+".pdf");
-            SubirPDF();
-            DeleteFiles();
+            .GeneratePdf(articuloModel.Titulo+".pdf");
         }
 
         private void DeleteFiles()
@@ -77,15 +72,6 @@ namespace Revista_digital.Servicios
             File.Delete("Articulo.pdf");
         }
 
-        private void SubirPDF()
-        {
-            var clienteBlobService = new BlobServiceClient("CADENA DE CONEXION");
-            var clienteContenedor = clienteBlobService.GetBlobContainerClient("ArticulosPDF");
-            clienteContenedor.CreateIfNotExists();
-
-            Stream streamPdf = File.OpenRead(articulo.Titulo + ".pdf");
-            string nombrePdf = Path.GetFileName(articulo.Titulo + ".pdf");
-            clienteContenedor.UploadBlob(nombrePdf, streamPdf);
-        }
+        
     }
 }
