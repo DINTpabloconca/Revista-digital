@@ -64,14 +64,6 @@ namespace Revista_digital.Servicios
                 });
             })
             .GeneratePdf(articuloModel.Titulo+".pdf");
-        }
-
-        private void DeleteFiles()
-        {
-            File.Delete("downloadedImage.png");
-            File.Delete("Articulo.pdf");
-        }
-
-        
+        }        
     }
 }
