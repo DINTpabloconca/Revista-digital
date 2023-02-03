@@ -19,7 +19,7 @@ namespace Revista_digital.Vista_Modelo
 
         public GenerarPDFService servicioGenerarPDFService;
 
-        public SubirPDFAzureService servicioPDFAzureService;
+        public GestionAzureBlobService servicioPDFAzureService;
 
         public RelayCommand AñadirArticuloCommand { get; }
 
@@ -56,7 +56,7 @@ namespace Revista_digital.Vista_Modelo
             // Servicios
             servicioArticulo = new ServicioCreacionArticulo();
             servicioGenerarPDFService = new GenerarPDFService();
-            servicioPDFAzureService = new SubirPDFAzureService();
+            servicioPDFAzureService = new GestionAzureBlobService();
 
 
 

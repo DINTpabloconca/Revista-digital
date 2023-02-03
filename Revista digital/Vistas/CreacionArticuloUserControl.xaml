@@ -17,7 +17,7 @@
 
         </Style>
     </UserControl.Resources>
-    <Grid Background="White">
+    <Grid Background="White" Height="500">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"/>
             <ColumnDefinition Width="*"/>
@@ -38,8 +38,7 @@
         <inputLayout:SfTextInputLayout
             ContainerType="Outlined"
             Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
-            Hint="Título"
-            Margin="20">
+            Hint="Título">
             <TextBox Text="{Binding Path=ArticuloCreado.Titulo}" Style="{StaticResource TextboxCenter}"></TextBox>
         </inputLayout:SfTextInputLayout>
 
@@ -47,24 +46,22 @@
         <inputLayout:SfTextInputLayout
             ContainerType="Outlined"
             Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
-            Hint="Seccion"
-            Margin="20">
+            Hint="Seccion">
             <TextBox Style="{StaticResource TextboxCenter}" Text="{Binding Path=ArticuloCreado.Seccion}"></TextBox>
         </inputLayout:SfTextInputLayout>
         <Label Grid.Row="3" Grid.Column="0" Content="Cuerpo: " Style="{StaticResource LabelCenter}"></Label>
         <inputLayout:SfTextInputLayout
             ContainerType="Outlined"
-            Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
-            Hint="Cuerpo"
-            Margin="20">
+            Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2"
+            Margin="0,0,5,0"
+            Hint="Cuerpo">
             <TextBox Text="{Binding Path=ArticuloCreado.Cuerpo}" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="15" AcceptsReturn="True" Height="80"></TextBox>
         </inputLayout:SfTextInputLayout>
         <Label Grid.Row="5" Grid.Column="0" Content="Imagen: " Style="{StaticResource LabelCenter}"></Label>
         <inputLayout:SfTextInputLayout
             ContainerType="Outlined"
             Grid.Row="5" Grid.Column="1"
-            Hint="Imagen"
-            Margin="20">
+            Hint="Imagen">
             <TextBox  Text="{Binding Path=ArticuloCreado.Imagen}" Style="{StaticResource TextboxCenter}"></TextBox>
         </inputLayout:SfTextInputLayout>
         <Button Grid.Column="2" Grid.Row="5" Margin="10" Width="100" Height="20" Content="Examinar" Command="{Binding Path=ExaminarImagenCommand}"></Button>
@@ -77,8 +74,7 @@
         <inputLayout:SfTextInputLayout
                 ContainerType="Outlined"
                 Hint="Autor"
-                Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"
-                Margin="20">
+                Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2">
             <editors:SfTextBoxExt 
                       SearchItemPath="Nombre"
                       AutoCompleteMode="Suggest"
