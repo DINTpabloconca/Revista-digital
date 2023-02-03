@@ -197,7 +197,7 @@
     <Compile Include="Servicios\GenerarPDFService.cs" />
     <Compile Include="Servicios\GestionarAutorService.cs" />
     <Compile Include="Servicios\ServicioCreacionArticulo.cs" />
-    <Compile Include="Servicios\SubirPDFAzureService.cs" />
+    <Compile Include="Servicios\GestionAzureBlobService.cs" />
     <Compile Include="Vista Modelo\AutorVM.cs" />
     <Compile Include="Servicios\ServicioNavegacion.cs" />
     <Compile Include="Vista Modelo\MainWindowVM.cs" />
